@@ -1,0 +1,20 @@
+.searcher-container {
+    font-family: 'Visitor', sans-serif;
+    font-size: 35px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+  }
+
+.searcher-container h1{
+    color:yellow;
+    text-shadow: 0px 1px 4px #200034;
+    margin-bottom: 8px;
+}
+
+.input-searcher{
+  max-width: 300px;
+}
