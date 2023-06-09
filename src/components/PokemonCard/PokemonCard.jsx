@@ -4,7 +4,7 @@ import './index.css'
 import Meta from 'antd/es/card/Meta'
 import { StarOutlined } from '@ant-design/icons'
 
-function PokemonCard({ name, type }){
+function PokemonCard({ name, url }){
     return (
         <Card
             className='pokemon-card'
@@ -12,7 +12,7 @@ function PokemonCard({ name, type }){
             cover={<img src="" alt={name}/>}
             extra={<StarOutlined/>}
         >
-            <Meta className='pokemon-card-description' description={type}/>
+            <Meta className='pokemon-card-description' description={"water, magic"}/>
         </Card>
     )
 } 
