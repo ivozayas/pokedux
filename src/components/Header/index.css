@@ -1,12 +1,13 @@
 .searcher-container {
     font-family: 'Visitor', sans-serif;
-    font-size: 35px;
+    font-size: 40px;
     width: 500px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     margin: auto;
+    margin-bottom: 40px;
   }
 
 .searcher-container h1{

@@ -9,7 +9,6 @@ function App() {
 
   return (
     <div className="App">
-      <img src='../statics/NicePng_pokedex-png_2285786.png' alt="ORTOOOO"/>
       <Header/>
       <PokemonsList pokemons={reduxPokemons}/>
     </div>

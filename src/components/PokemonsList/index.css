@@ -6,6 +6,6 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1vw));
     gap: 1.8rem;
     padding-inline-start: 0px;
-    margin: 40px auto;
+    margin: 30px auto;
     padding-bottom: 40px;
 }
