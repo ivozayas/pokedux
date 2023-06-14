@@ -1,12 +1,18 @@
+import { useDispatch } from 'react-redux'
+import { setFavorite } from '../../actions'
+import React from 'react'
+
+import Meta from 'antd/es/card/Meta'
+import { useInView } from "react-intersection-observer"
 import { Card } from 'antd'
 import { CustomCardTitle } from './CustomTitle'
 import { PokemonDescription } from './PokemonDescription'
+import { FavButton } from './FavButton'
 import './index.css'
-import Meta from 'antd/es/card/Meta'
-import { StarOutlined } from '@ant-design/icons'
-import { useInView } from "react-intersection-observer"
 
-function PokemonCard({ name, img, type }){
+function PokemonCard({ name, img, type, id, isFav }){
+    const dispatch = useDispatch()
+
     function typeColor(types){
         function isNormal(){
             if(types[0].type.name === 'normal' && types.length > 1){
@@ -62,12 +68,16 @@ function PokemonCard({ name, img, type }){
         threshold: 0.1,
     })
 
+    function handleOnFav() {
+        dispatch(setFavorite({pokemonID: id}))
+    }
+
     return (
         <Card
             className='pokemon-card'
             title={<CustomCardTitle name={name}/>}
             cover={<img className='pokemon-img' src={img} alt={name}/>}
-            extra={<StarOutlined className=''/>}
+            extra={<FavButton isFav={isFav} onClick={handleOnFav}/>}
             style={{
                 background: typeColor(type),
                 opacity: inView ? 1 : 0
@@ -79,4 +89,6 @@ function PokemonCard({ name, img, type }){
     )
 } 
 
-export { PokemonCard }
+export default React.memo(PokemonCard, (prevProps, nextProps) => {
+    return prevProps.isFav === nextProps.isFav;
+  })

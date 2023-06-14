@@ -1,4 +1,4 @@
-import { PokemonCard } from "../PokemonCard/PokemonCard";
+import PokemonCard from "../PokemonCard/PokemonCard";
 import { Loading } from '../Loading/Loading';
 import { useSelector } from "react-redux";
 import './index.css'
@@ -17,6 +17,8 @@ function PokemonsList({ pokemons }) {
                         name={pokemon.name}
                         img={pokemon.sprites.front_default}
                         type={pokemon.types} 
+                        id={pokemon.id}
+                        isFav={pokemon.favorite}
                     ></PokemonCard>
                     ))}
                 </ul>)

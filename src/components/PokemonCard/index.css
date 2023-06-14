@@ -27,11 +27,6 @@
     margin-bottom: 5px;
 }
 
-:where(.css-dev-only-do-not-override-12jzuas).ant-card .ant-card-extra  {
-    color: white;
-    padding-top: 3px;
-}
-
 :where(.css-dev-only-do-not-override-12jzuas).ant-card .ant-card-head-wrapper {
     padding: 0px 5px;
 }
@@ -57,4 +52,30 @@
 
 .pokemon-img {
     max-width: 90%;
+}
+
+:where(.css-dev-only-do-not-override-12jzuas).ant-card .ant-card-extra {
+    font-size: 18px;
+}
+
+.on-fav {
+    color: yellow;
+    width: 25px;
+    padding-top: 4px;
+    padding-left: 4px;
+}
+
+.on-fav:hover {
+    color: white;
+}
+
+.set-fav {
+    color: white;
+    width: 25px;
+    padding-top: 4px;
+    padding-left: 4px;
+}
+
+.set-fav:hover {
+    color: yellow;
 }

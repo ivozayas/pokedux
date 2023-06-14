@@ -1,4 +1,4 @@
-import { SET_LOADING, SET_POKEMONS } from "./types"
+import { SET_FAVORITE, SET_LOADING, SET_POKEMONS } from "./types"
 import { getPokemonDetails } from '../App/API'
 
 function setPokemonsAction(payload){
@@ -15,7 +15,12 @@ function setLoading(payload){
     }
 }
 
-
+function setFavorite(payload){
+    return {
+        type: SET_FAVORITE,
+        payload
+    }
+}
 // en la estructura de redux thunk, el action creator devuelve una función que recibe un dispatch
 function getPokemonsWithDetailsAction(pokemons = []){
     return (
@@ -29,4 +34,4 @@ function getPokemonsWithDetailsAction(pokemons = []){
     )
 }
 
-export { setPokemonsAction, getPokemonsWithDetailsAction, setLoading }
+export { setPokemonsAction, getPokemonsWithDetailsAction, setLoading, setFavorite }
