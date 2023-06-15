@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { shallowEqual, useDispatch, useSelector } from 'react-redux'
 import { getPokemonsWithDetailsAction, setLoading } from '../actions/index.js'
 
 //
@@ -13,7 +13,8 @@ export function getPokemonDetails(url){
 //
 function usePokemons(){
     const dispatch = useDispatch()
-    const reduxPokemons = useSelector(state => state.pokemons)
+    const reduxPokemons = useSelector(state => state.getIn(['data', 'pokemons'], shallowEqual())).toJS()
+    // shallowEqual comprueba si los cambios en el estado son irrelevantes para un componente y en ese caso evita su re-renderización
 
     useEffect(() => {
         async function getPokemons(){

@@ -1,11 +1,11 @@
-import PokemonCard from "../PokemonCard/PokemonCard";
+import { PokemonCard } from "../PokemonCard/PokemonCard";
 import { Loading } from '../Loading/Loading';
 import { useSelector } from "react-redux";
 import './index.css'
 
 function PokemonsList({ pokemons }) {
     // const [loading, setLoading] = useState(true)
-    const loading = useSelector(state => state.loading)
+    const loading = useSelector(state => state.getIn(['UI', 'loading']))
 
     return (
         <section style={{display: "flex", justifyContent: "center"}}>

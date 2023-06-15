@@ -26,7 +26,7 @@ function PokemonCard({ name, img, type, id, isFav }){
             case 'grass':
                 return 'linear-gradient(180deg, rgba(15,120,69,1) 0%, rgba(60,222,58,1) 100%)';
             case 'fire':
-                return 'linear-gradient(180deg, rgba(202,72,10,1) 0%, rgba(255,180,0,1) 100%)';
+                return 'linear-gradient(180deg, rgba(202,42,0,1) 0%, rgba(255,190,0,1) 100%)';
             case 'water':
                 return 'linear-gradient(180deg, rgba(10,80,230,1) 0%, rgba(30,224,255,1) 100%)';
             case 'bug':
@@ -89,6 +89,7 @@ function PokemonCard({ name, img, type, id, isFav }){
     )
 } 
 
-export default React.memo(PokemonCard, (prevProps, nextProps) => {
-    return prevProps.isFav === nextProps.isFav;
-  })
+export { PokemonCard }
+// export default React.memo(PokemonCard, (prevProps, nextProps) => {
+//     return prevProps.isFav === nextProps.isFav;
+//   }) // usando shallowEqual no  hace falta

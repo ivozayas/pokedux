@@ -7,7 +7,7 @@ import { applyMiddleware, compose, legacy_createStore as createStore } from 'red
 import { logger } from './middlewares';
 
 import App from './App/App';
-import { pokemonsReducer } from './reducers/pokemons';
+import { rootReducer } from './reducers/rootReducer';
 import './index.css';
 
 const composeAlt = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose // para usar devtools con redux thunk
@@ -20,9 +20,8 @@ const componseEnhancers = composeAlt(
 //         applyMiddleware(thunk, logger)
 //       )
 
-
 const store = createStore(
-        pokemonsReducer,
+        rootReducer,
         componseEnhancers
       )
 
