@@ -1,18 +1,33 @@
 import './App.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+
+import { getPokemonsWithDetails } from '../slices/DataSlice';
+
 import { Header } from '../components/Header/Header';
 import { PokemonsList } from '../components/PokemonsList/PokemonsList';
-import { usePokemons } from './API';
 import { NavBar } from '../components/NavBar/NavBar';
-import './App.css'
+import { Filter } from '../components/Filter/Filter';
+import { PauseButton } from '../components/Music/PauseButton'
+import { Audio } from '../components/Music/Audio';
 
 function App() {
-  const { reduxPokemons } = usePokemons()
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getPokemonsWithDetails())
+  }, [dispatch])
+
+  const pokemons = useSelector((state) => state.data.pokemons);
 
   return (
     <div className="App">
+      <Audio/>
       <NavBar></NavBar>
       <Header/>
-      <PokemonsList pokemons={reduxPokemons}/>
+      <Filter/>
+      <PokemonsList pokemons={pokemons}/>
+      <PauseButton/>
     </div>
   );
 }

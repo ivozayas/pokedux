@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux'
-import { setFavorite } from '../../actions'
+import { setFavorite } from '../../slices/DataSlice'
 import React from 'react'
 
 import Meta from 'antd/es/card/Meta'
@@ -76,7 +76,7 @@ function PokemonCard({ name, img, type, id, isFav }){
         <Card
             className='pokemon-card'
             title={<CustomCardTitle name={name}/>}
-            cover={<img className='pokemon-img' src={img} alt={name}/>}
+            cover={img ? <img className='pokemon-img' src={img} alt={name}/> : <div/>}
             extra={<FavButton isFav={isFav} onClick={handleOnFav}/>}
             style={{
                 background: typeColor(type),

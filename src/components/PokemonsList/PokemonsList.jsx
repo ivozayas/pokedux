@@ -5,8 +5,8 @@ import './index.css'
 
 function PokemonsList({ pokemons }) {
     // const [loading, setLoading] = useState(true)
-    const loading = useSelector(state => state.getIn(['UI', 'loading']))
-
+    const loading = useSelector((state) => state.ui.loading)
+    
     return (
         <section style={{display: "flex", justifyContent: "center"}}>
             {loading ? (<Loading/>) :

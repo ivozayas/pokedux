@@ -1,0 +1,31 @@
+.filter {
+    background-color: transparent;
+    border: none;
+    font-family: 'Visitor', sans-serif;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 30px;
+    margin: 0px 40px 30px 40px;
+    padding: 0px 10px;
+}
+
+:where(.css-dev-only-do-not-override-12jzuas).ant-menu-light .ant-menu-submenu-title:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected) {
+    transition: color .1s ease-in-out;
+}
+
+:where(.css-dev-only-do-not-override-12jzuas).ant-menu-light .ant-menu-submenu-title:hover:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected) {
+    color: yellow
+}
+
+:where(.css-dev-only-do-not-override-12jzuas).ant-menu-light.ant-menu-horizontal >.ant-menu-submenu:hover::after {
+    border-color: yellow;
+}
+
+:where(.css-dev-only-do-not-override-12jzuas).ant-menu-light.ant-menu-horizontal >.ant-menu-submenu::after {
+    border-color: transparent;
+}
+
+:where(.css-dev-only-do-not-override-12jzuas).ant-menu-horizontal {
+    border-bottom: 1px solid white;
+    transform: color .1s ease-in-out;
+}

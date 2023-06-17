@@ -1,0 +1,16 @@
+.music-wrapper {
+    z-index: 1;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+.music-icon {
+    transition: color .1s ease-in-out;
+    color: white;
+    font-size: 25px;
+}
+
+.music-icon:hover {
+    color: yellow
+}

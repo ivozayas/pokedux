@@ -2,7 +2,7 @@ import './index.css'
 import { useSelector } from 'react-redux'
 
 function NavBar() {
-    const loading = useSelector(state => state.getIn(['UI', 'loading']))
+    const loading = useSelector(state => state.ui.loading)
 
     return (<div className='nav-bar'>
         <ul style={{opacity: loading ? 0 : 1}}>

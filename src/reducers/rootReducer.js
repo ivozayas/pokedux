@@ -1,13 +1,11 @@
-// import { combineReducers } from 'redux' // sin immutable
-import { combineReducers } from 'redux-immutable' // como estamos usando immutable, debemos instalar la librería redux immutable 
-
-import { pokemonsReducer } from './pokemons'
-import { UIReducer } from './UI'
+import { combineReducers } from 'redux'
+import dataReducer from '../slices/DataSlice'
+import UIReducer from '../slices/UISlice'
 
 const rootReducer = combineReducers({
     // recibe un objeto, cada propiedad de este va a ser una propiedad del estado
-    data: pokemonsReducer,
-    UI: UIReducer,
+    data: dataReducer,
+    ui: UIReducer
 })
 
 export { rootReducer }

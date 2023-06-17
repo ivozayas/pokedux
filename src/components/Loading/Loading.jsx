@@ -14,9 +14,6 @@ function Loading() {
         }
     }, [])
 
-    useEffect(() => {
-    console.log(dots)}, [dots])
-        
     return(
         <h2 className='loading-text'>loading{'.'.repeat(dots)}</h2>
     )
