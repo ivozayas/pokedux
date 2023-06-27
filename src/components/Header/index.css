@@ -1,6 +1,5 @@
 .searcher-container {
     font-family: 'Visitor', sans-serif;
-    font-size: 40px;
     width: 500px;
     display: flex;
     justify-content: center;
@@ -8,16 +7,32 @@
     align-items: center;
     margin: auto;
     margin-bottom: 20px;
-    margin-top: 80px;
-  }
+    margin-top: 70px;
+}
 
 .searcher-container h1{
     color:yellow;
     text-shadow: 2px 2px 6px #200034ce;
     margin-bottom: 8px;
+    font-size: 60px;
 }
 
 .input-searcher{
   max-width: 300px;
+  transition: box-shadow .2s ease-in-out;
+  box-shadow: 2px 2px 15px #20003454;
+}
+
+.input-searcher:hover {
+  box-shadow: 1px 1px 8px #20003454;
+}
+
+.input-searcher-loading{
+  max-width: 300px;
   transition: box-shadow .5s ease-in-out;
+  box-shadow: none;
+}
+
+:where(.css-dev-only-do-not-override-12jzuas).ant-input-group .ant-input-group-addon, :where(.css-dev-only-do-not-override-12jzuas).ant-input-group .ant-input-group-wrap {
+  vertical-align: baseline;
 }

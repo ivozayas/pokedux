@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './index.css'
 
-function Loading() {
+function Loading({ text }) {
     const [ dots, setDots ] = useState(0)
     
     useEffect(() => {
@@ -15,7 +15,7 @@ function Loading() {
     }, [])
 
     return(
-        <h2 className='loading-text'>loading{'.'.repeat(dots)}</h2>
+        <h2 className='loading-text'>{text}{'.'.repeat(dots)}</h2>
     )
 }
 

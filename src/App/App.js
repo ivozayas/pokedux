@@ -1,15 +1,18 @@
 import './App.css';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
 import { getPokemonsWithDetails } from '../slices/DataSlice';
 
-import { Header } from '../components/Header/Header';
-import { PokemonsList } from '../components/PokemonsList/PokemonsList';
 import { NavBar } from '../components/NavBar/NavBar';
-import { Filter } from '../components/Filter/Filter';
-import { PauseButton } from '../components/Music/PauseButton'
 import { Audio } from '../components/Music/Audio';
+
+import { Home } from '../routes/Home/Home';
+import { Favorites } from '../routes/Favorites';
+import { Contact } from '../routes/Contact/Contact';
+import { PokemonDetails } from '../routes/PokemonDetails/PokemonDetails';
+import { PauseButton } from "../components/Music/PauseButton"
 
 function App() {
   const dispatch = useDispatch()
@@ -18,15 +21,18 @@ function App() {
     dispatch(getPokemonsWithDetails())
   }, [dispatch])
 
-  const pokemons = useSelector((state) => state.data.pokemons);
-
   return (
     <div className="App">
       <Audio/>
       <NavBar></NavBar>
-      <Header/>
-      <Filter/>
-      <PokemonsList pokemons={pokemons}/>
+      
+      <Routes>
+        <Route path='/' exact element={<Home/>}/>
+        <Route path='/favorites' element={<Favorites/>}/>
+        <Route path='/contact' element={<Contact/>}/>
+        <Route path='/pokemon-details/:id' element={<PokemonDetails/>}/>
+      </Routes>
+
       <PauseButton/>
     </div>
   );

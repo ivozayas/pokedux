@@ -1,0 +1,50 @@
+.contact-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Visitor', sans-serif;
+    color: white;
+    padding-top: 30px;
+    filter: saturate(110%);
+    transition: opacity .1s ease-in-out;
+}
+
+.contact-container img {
+    width: 300px;
+    padding-right: 10px;
+    transition: transform .1s ease-in-out;
+}
+
+.contact-container img:hover {
+    transform: scale(0.95);
+    padding-right: 10px;
+}
+
+.name {
+    margin-top: -40px;
+    font-size: 50px;
+    text-shadow: 1px 1px 5px rgb(26, 12, 38);
+    margin-bottom: 0px;
+}
+
+.icon-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+}
+
+.contact-icon {
+    font-size: 28px;
+    transition: color .1s ease-in-out, transform .1s ease-in-out;
+}
+
+.contact-icon:hover {
+    color: yellow;
+    transform: scale(1.1);
+}
+
+.a {
+    text-shadow: 1px 1px 4px rgb(26, 12, 38);
+    font-size: 20px;
+    margin-bottom: 30px;
+}

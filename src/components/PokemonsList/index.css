@@ -9,3 +9,13 @@
     margin: 30px auto;
     padding-bottom: 40px;
 }
+
+.empty-search {
+    font-family: 'Visitor', sans-serif;
+    color: white;
+    font-size: 20px;
+}
+
+.empty-search span {
+    color: yellow;
+}

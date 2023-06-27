@@ -18,11 +18,13 @@ function Filter() {
             {!loading && (
                 <SubMenu
                     key='types'
-                    icon={<FireOutlined style={{fontSize: '15px', margin: '3px'}}/>} title="Types"
+                    icon={<FireOutlined style={{fontSize: '15px', margin: '3px'}}/>}
+                    title="Types"
                 >
                     {types.map(type => (
                         <Menu.Item
-                            style={{fontFamily: 'Visitor, sans-serif', fontSize: '16px'}}key={type}
+                            style={{fontFamily: 'Visitor, sans-serif', fontSize: '16px'}}
+                            key={type}
                         >{type}</Menu.Item>
                     ))}
                 </SubMenu>
