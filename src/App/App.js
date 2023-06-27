@@ -9,6 +9,7 @@ import { NavBar } from '../components/NavBar/NavBar';
 import { Audio } from '../components/Music/Audio';
 
 import { Home } from '../routes/Home/Home';
+import { Search } from '../routes/Search/Search';
 import { Favorites } from '../routes/Favorites';
 import { Contact } from '../routes/Contact/Contact';
 import { PokemonDetails } from '../routes/PokemonDetails/PokemonDetails';
@@ -31,11 +32,12 @@ function App() {
         <Route path='/favorites' element={<Favorites/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/pokemon-details/:id' element={<PokemonDetails/>}/>
+        <Route path='/search/:searchValue' element={<Search/>}/>
       </Routes>
 
       <PauseButton/>
     </div>
-  );
+  )
 }
 
 export default App;

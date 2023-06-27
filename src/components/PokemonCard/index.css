@@ -5,7 +5,7 @@
     border: 5px solid yellow;
     box-shadow: 2px 2px 10px 1px #200034, inset 2px 2px 10px rgba(0, 0, 0, 0.6);
     filter: brightness(95%);
-    transition: box-shadow .2s ease-in-out, filter .2s ease-in-out, transform .2s ease-in-out, opacity .4s ease-in-out;
+    transition: box-shadow .2s ease-in-out, filter .2s ease-in-out, transform .2s ease-in-out;
 }
 
 .pokemon-card:hover {
@@ -84,4 +84,5 @@
 
 .link {
     text-decoration: none;
+    transition: opacity .4s ease-in-out;
 }

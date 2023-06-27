@@ -1,10 +1,13 @@
 import { Input } from 'antd'
 import { useSelector, useDispatch } from 'react-redux'
-import { setSearchValue, setSearchedPokemons } from '../../slices/DataSlice'
+import { setSearchValue, setShowedPokemons } from '../../slices/DataSlice'
 import { setEmptySearch, setSearching} from '../../slices/UISlice'
+import { useNavigate } from 'react-router-dom'
 import './index.css'
 
 function Searcher(){
+    const navigate = useNavigate();
+
     const dispatch = useDispatch()
     const loading = useSelector(state => state.ui.loading)
     const searchValue = useSelector(state => state.data.searchValue)
@@ -14,9 +17,9 @@ function Searcher(){
         dispatch(setSearchValue(event.target.value))
     }
 
-    function handleSearch() {
+    function handleSearch() { 
         dispatch(setEmptySearch(false))
-
+        
         let searchedPokemons = pokemons.filter(pokemon => pokemon.name.toLowerCase().includes(searchValue.toLowerCase()))
 
         dispatch(setSearching(true))
@@ -25,8 +28,11 @@ function Searcher(){
             if(searchedPokemons.length < 1){
                 dispatch(setEmptySearch(true))
             } else {
-                dispatch(setSearchedPokemons(searchedPokemons))
+                dispatch(setShowedPokemons(searchedPokemons))
             }
+
+            navigate(`/search/${searchValue}`)
+            dispatch(setSearchValue(''))
             dispatch(setSearching(false))
         }, 1000)
     }

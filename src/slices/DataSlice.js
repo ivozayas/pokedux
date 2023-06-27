@@ -5,9 +5,11 @@ import { setLoading, setMusic } from './UISlice'
 // redux toolkit se encarga por sí sólo de la inmutabilidad
 const initialState = {
     pokemons: [],
+    showedPokemons: [],
     types: [],
     searchValue: '',
-    searchedPokemons: [],
+    // searchedPokemons: [],
+    searchedType: '',
     favorites: []
 }
 
@@ -38,6 +40,7 @@ export const getPokemonsWithDetails = createAsyncThunk(
         dispatch(setMusic(true))
         dispatch(setTypes(pokemonTypes))
         dispatch(setPokemons(pokemonsDetails))
+        dispatch(setShowedPokemons(pokemonsDetails))
         dispatch(setLoading(false))
     }
 )
@@ -66,8 +69,11 @@ export const dataSlice = createSlice({
         setSearchValue: (state, action) => {
             state.searchValue = action.payload
         },
-        setSearchedPokemons: (state, action) => {
-            state.searchedPokemons = action.payload
+        setSearchedType: (state, action) => {
+            state.searchedType = action.payload
+        },
+        setShowedPokemons: (state, action) => {
+                state.showedPokemons = action.payload;
         }
     }
 })
@@ -77,7 +83,9 @@ export const {
     setFavorite,
     setTypes,
     setSearchValue,
-    setSearchedPokemons
+    setSearchedPokemons,
+    setSearchedType,
+    setShowedPokemons
 } = dataSlice.actions
 
 export default dataSlice.reducer

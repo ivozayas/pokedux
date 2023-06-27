@@ -12,12 +12,6 @@
 .contact-container img {
     width: 300px;
     padding-right: 10px;
-    transition: transform .1s ease-in-out;
-}
-
-.contact-container img:hover {
-    transform: scale(0.95);
-    padding-right: 10px;
 }
 
 .name {
@@ -34,6 +28,8 @@
 }
 
 .contact-icon {
+    text-decoration: none;
+    color: white;
     font-size: 28px;
     transition: color .1s ease-in-out, transform .1s ease-in-out;
 }

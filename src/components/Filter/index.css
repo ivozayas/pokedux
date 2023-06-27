@@ -5,8 +5,9 @@
     font-size: 20px;
     color: white;
     margin-bottom: 30px;
-    margin: 0px 40px 30px 40px;
-    padding: 0px 10px;
+    /* margin: 0px 40px 30px 40px;
+    padding: 0px 10px; */
+    width: 89vw;
 }
 
 :where(.css-dev-only-do-not-override-12jzuas).ant-menu-light .ant-menu-submenu-title:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected) {
