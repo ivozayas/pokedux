@@ -3,8 +3,8 @@
     min-width: 80vw;
     min-height: 80vh;
     margin-top: 85px;
-    margin-left: 2%;
-    box-shadow: 2px 2px 15px 2px #200034, inset 2px 2px 15px rgba(0, 0, 0, 0.5);
+    margin-left: 3%;
+    box-shadow: 2px 2px 15px 2px #200034c9, inset 2px 2px 15px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
     border: 10px solid yellow;
 }
@@ -13,21 +13,70 @@
     min-width: 100%;
     border-bottom: 2px solid white;
     padding-top: 25px;
-    padding-left: 55px;
+    padding-left: 60px;
     padding-bottom: 20px;
 }
 
 .pokemon-name {
     font-family: 'Visitor', sans-serif;
-    font-size: 55px;
-    color: white;
+    font-size: 50px;
+    color: yellow;
     margin: 0;
+    /* text-shadow: 2px 2px 6px #200034ce; */
 }
 
 .pokemon-details-img {
-    width: 400px;
+    width: 420px;
     position: absolute;
     right: 60px;
-    bottom: 65px;
+    bottom: 30px;
     margin: -10px;
+}
+
+.data-body {
+    font-family: 'Visitor', sans-serif;
+    color: yellow;
+    padding-left: 60px;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+.details-data {
+    font-size: 23px;
+}
+
+.details-data span{
+    margin-right: 20px;
+    color: white
+}
+
+.stats {
+    margin-top: 20px;
+}
+
+.stats h2 {
+    margin: 0;
+}
+
+.text-data {
+    display: flex;
+    flex-direction: column;
+}
+
+.abilities {
+    font-size: 23px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.data {
+    display: flex;
+    flex-direction: row;
+}
+
+.ability p {
+    color: white;
+    font-size: 20px;
 }

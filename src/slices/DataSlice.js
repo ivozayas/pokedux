@@ -8,7 +8,7 @@ const initialState = {
     showedPokemons: [],
     types: [],
     searchValue: '',
-    // searchedPokemons: [],
+    pokemonsAbilities: [],
     searchedType: '',
     favorites: []
 }
@@ -27,6 +27,14 @@ export const getPokemonsWithDetails = createAsyncThunk(
                 return getPokemonDetails(pokemon.url)
             })
         )
+        
+        // const abilitiesDetails = await Promise.all (
+        //     pokemonResults.map(pokemon => {
+        //         return pokemon.abilities.map(ability => {
+        //             return getPokemonDetails(ability.ability.url)
+        //         })      
+        //     })
+        // )
 
         pokemonsDetails.forEach( pokemon => {
                 pokemon.types.forEach(type => {
@@ -40,6 +48,7 @@ export const getPokemonsWithDetails = createAsyncThunk(
         dispatch(setMusic(true))
         dispatch(setTypes(pokemonTypes))
         dispatch(setPokemons(pokemonsDetails))
+        // dispatch(setPokemonsAbilities(abilitiesDetails))
         dispatch(setShowedPokemons(pokemonsDetails))
         dispatch(setLoading(false))
     }
@@ -74,6 +83,9 @@ export const dataSlice = createSlice({
         },
         setShowedPokemons: (state, action) => {
                 state.showedPokemons = action.payload;
+        },
+        setPokemonsAbilities: (state, action) => {
+            state.pokemonsAbilities = action.payload
         }
     }
 })
@@ -85,7 +97,8 @@ export const {
     setSearchValue,
     setSearchedPokemons,
     setSearchedType,
-    setShowedPokemons
+    setShowedPokemons,
+    setPokemonsAbilities
 } = dataSlice.actions
 
 export default dataSlice.reducer

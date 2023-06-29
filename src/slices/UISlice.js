@@ -12,7 +12,7 @@ const initialState = {
         bug: 'linear-gradient(180deg, rgba(125,105,45,1) 0%, rgba(141,230,112,1) 100%)',
         poison: 'linear-gradient(180deg, rgba(122,3,133,1) 0%, rgba(52,235,87,1) 100%)',
         flying: 'linear-gradient(180deg, rgba(180,138,235,1) 0%, rgba(255,245,255,1) 100%)',
-        electric: 'linear-gradient(180deg, rgba(170,142,0,1) 0%, rgba(254,255,0,1) 100%)',
+        electric: 'linear-gradient(180deg, rgba(170,142,0,1) 0%, rgba(254,235,0,1) 100%)',
         ground: 'linear-gradient(180deg, rgba(110,79,25,1) 0%, rgba(245,199,72,1) 100%)',
         fairy: 'linear-gradient(180deg, rgba(255,124,165,1) 0%, rgba(255,239,239,1) 100%)',
         normal: ' linear-gradient(180deg, rgba(172,151,113,1) 0%, rgba(238,255,230,1) 100%)',

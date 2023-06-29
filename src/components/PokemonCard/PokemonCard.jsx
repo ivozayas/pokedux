@@ -37,7 +37,7 @@ function PokemonCard({ name, img, type, id, isFav }){
                 title={<CustomCardTitle name={name}/>}
                 cover={img ? <img className='pokemon-img' src={img} alt={name}/> : <div/>}
                 extra={<FavButton isFav={isFav} onClick={handleOnFav}/>}
-                style={{
+                style={{ // corregir color normal?...
                     background: typesColors[type[0].type.name],
                 }}
             >
