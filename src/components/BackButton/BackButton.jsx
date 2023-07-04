@@ -6,7 +6,7 @@ function BackButton() {
     const navigate  = useNavigate()
 
     return (
-        <ArrowLeftOutlined className='back-btn' onClick={() => navigate('/')}/>
+        <ArrowLeftOutlined className='back-btn' onClick={() => navigate(-1)}/>
     )
 }
 

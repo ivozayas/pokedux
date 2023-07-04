@@ -38,7 +38,7 @@ function RadarComponent({ stats }) {
             height={300}
             data={data}
         >
-            <PolarGrid />
+            <PolarGrid stroke="white"/>
             <PolarAngleAxis
                 dataKey="subject"
                 tick={{ 
@@ -47,7 +47,7 @@ function RadarComponent({ stats }) {
                     dy: 4
                 }}
             />
-            <PolarRadiusAxis />
+            <PolarRadiusAxis stroke='white' />
 
             <Radar
                 dataKey="A"

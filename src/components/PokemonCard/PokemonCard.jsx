@@ -21,6 +21,10 @@ function PokemonCard({ name, img, type, id, isFav }){
         threshold: 0.1,
     })
 
+    if(type[0].type.name === 'normal' && type.length > 1) {
+        type.reverse()
+    }
+
     function handleOnFav() {
         dispatch(setFavorite({pokemonID: id}))
     }

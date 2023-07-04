@@ -15,7 +15,7 @@ function PokemonsList({ pokemons }) {
                                 key={index}
                                 name={pokemon.name}
                                 img={pokemon.sprites.front_default}
-                                type={pokemon.types} 
+                                type={[...pokemon.types]} 
                                 id={pokemon.id}
                                 isFav={pokemon.favorite}
                             ></PokemonCard>
