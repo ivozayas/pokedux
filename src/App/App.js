@@ -26,7 +26,7 @@ function App() {
     <div className="App">
       <Audio/>
       <NavBar></NavBar>
-      
+
       <Routes>
         <Route path='/' exact element={<Home/>}/>
         <Route path='/favorites' element={<Favorites/>}/>

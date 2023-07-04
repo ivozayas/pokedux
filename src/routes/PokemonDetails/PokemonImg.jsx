@@ -7,7 +7,7 @@ function PokemonImg({ src, alt }) {
     useEffect(() => {
         const interval = setInterval(() => {
             setSize((prevSize) => {return prevSize > 1 ? 1 : 1.03})
-        }, 1000);
+        }, 900);
 
         return () => {
             clearInterval(interval)

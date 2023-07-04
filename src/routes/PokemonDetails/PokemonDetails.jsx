@@ -31,7 +31,7 @@ function PokemonDetails() {
     })
 
     return (
-        <section>
+        <section className="pokemon-details-section">
             <BackButton/>
             <DataContainer pokemon={pokemon}>
                 <div className="data-header">
@@ -56,14 +56,16 @@ function PokemonDetails() {
                                 />
                             </div>
                         </div>
-                        <div className="abilities">
+                        <div className="abilities-container">
                                 <h2 className="details-data">abilities:</h2>
-                                {abilities.map(ability => (
-                                    <div className="ability">
-                                        <span>{ability.name}</span>
-                                        <p>{ability.effect}</p>
-                                    </div>
-                                ))}
+                                <div className="abilities">
+                                    {abilities.map(ability => (
+                                        <div className="ability">
+                                            <span>{ability.name}</span>
+                                            <p>{ability.effect}</p>
+                                        </div>
+                                    ))}
+                                </div>
                         </div>
                     </div>
                     <div>
