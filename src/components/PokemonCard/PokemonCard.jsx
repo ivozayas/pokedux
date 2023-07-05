@@ -25,7 +25,8 @@ function PokemonCard({ name, img, type, id, isFav }){
         type.reverse()
     }
 
-    function handleOnFav() {
+    function handleOnFav(event) {
+        event.preventDefault()
         dispatch(setFavorite({pokemonID: id}))
     }
 
@@ -40,7 +41,7 @@ function PokemonCard({ name, img, type, id, isFav }){
                 className='pokemon-card'
                 title={<CustomCardTitle name={name}/>}
                 cover={img ? <img className='pokemon-img' src={img} alt={name}/> : <div/>}
-                extra={<FavButton isFav={isFav} onClick={handleOnFav}/>}
+                extra={<FavButton isFav={isFav} onClick={(event) => { handleOnFav(event)}}/>}
                 style={{ // corregir color normal?...
                     background: typesColors[type[0].type.name],
                 }}

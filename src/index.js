@@ -5,7 +5,7 @@ import thunk from 'redux-thunk';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux'; 
 import { applyMiddleware, compose, legacy_createStore as createStore } from 'redux';
-import { logger } from './middlewares';
+import { logger, localStorageMiddleware } from './middlewares';
 
 import App from './App/App';
 import { rootReducer } from './reducers/rootReducer';
@@ -14,7 +14,7 @@ import './index.css';
 const composeAlt = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose // para usar devtools con redux thunk
 
 const componseEnhancers = composeAlt(
-  applyMiddleware(thunk, logger)
+  applyMiddleware(thunk, logger, localStorageMiddleware)
 )
 // const componseEnhancers = compose(
 //         window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),

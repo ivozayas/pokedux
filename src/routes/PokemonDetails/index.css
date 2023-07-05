@@ -27,7 +27,7 @@
 .pokemon-name {
     font-family: 'Visitor', sans-serif;
     font-size: 50px;
-    color: white;
+    color: yellow;
     margin: 0;
 }
 
@@ -103,7 +103,7 @@
     .abilities-container {
         font-size: 23px;
         margin-left: 0px;
-        margin-right: 15px;
+        margin-right: 20px;
     }
     .pokemon-details-img {
         right: 10%;

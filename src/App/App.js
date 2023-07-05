@@ -10,7 +10,7 @@ import { Audio } from '../components/Music/Audio';
 
 import { Home } from '../routes/Home/Home';
 import { Search } from '../routes/Search/Search';
-import { Favorites } from '../routes/Favorites';
+import { Favorites } from '../routes/Favorites/Favorites';
 import { Contact } from '../routes/Contact/Contact';
 import { PokemonDetails } from '../routes/PokemonDetails/PokemonDetails';
 import { PauseButton } from "../components/Music/PauseButton"

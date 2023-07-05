@@ -1,0 +1,22 @@
+.favorites-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 90vh;
+}
+
+.favorites-container {
+    margin-top: 120px;
+    padding-top: 10px;
+    border-top: solid 2px white;
+}
+
+.empty-favorites {
+    font-size: 22px;
+    color: white;
+    font-family: 'Visitor', sans-serif;
+}
+.empty-favorites p {
+    text-align: center;
+}

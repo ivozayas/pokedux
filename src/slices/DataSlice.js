@@ -10,7 +10,7 @@ const initialState = {
     searchValue: '',
     pokemonsAbilities: [],
     searchedType: '',
-    favorites: []
+    favoritePokemons: []
 }
 
 // thunk con redux toolkit
@@ -36,7 +36,22 @@ export const getPokemonsWithDetails = createAsyncThunk(
             })
         )
 
+        //
+        if (!localStorage.getItem('fav_pokemons')) {
+            localStorage.setItem('fav_pokemons', JSON.stringify([]))
+        }
+            
+        const favoriteList = JSON.parse(localStorage.getItem('fav_pokemons'))
+
         pokemonsDetails.forEach( pokemon => {
+                const foundPokemon = favoriteList.find(LSpokemon => LSpokemon.id === pokemon.id)
+
+                if(foundPokemon){
+                    pokemon.favorite = true
+                } else {
+                    pokemon.favorite = false
+                }
+
                 pokemon.types.forEach(type => {
                     if(!pokemonTypes.includes(type.type.name)){
                         pokemonTypes.push(type.type.name)
@@ -51,6 +66,7 @@ export const getPokemonsWithDetails = createAsyncThunk(
         dispatch(setPokemonsAbilities(abilitiesDetails))
         dispatch(setShowedPokemons(pokemonsDetails))
         dispatch(setLoading(false))
+        dispatch(setFavoritePokemons())
     }
 )
 
@@ -68,7 +84,7 @@ export const dataSlice = createSlice({
                 return pokemon.id === action.payload.pokemonID
             })
 
-            if(currentPokemonsIndex > 0){
+            if(currentPokemonsIndex > -1){
                 state.pokemons[currentPokemonsIndex].favorite = !state.pokemons[currentPokemonsIndex].favorite
             }
         },
@@ -82,10 +98,13 @@ export const dataSlice = createSlice({
             state.searchedType = action.payload
         },
         setShowedPokemons: (state, action) => {
-                state.showedPokemons = action.payload
+            state.showedPokemons = action.payload
         },
         setPokemonsAbilities: (state, action) => {
             state.pokemonsAbilities = action.payload
+        },
+        setFavoritePokemons: (state) => {
+            state.favoritePokemons = JSON.parse(localStorage.getItem('fav_pokemons'))
         }
     }
 })
@@ -98,7 +117,8 @@ export const {
     setSearchedPokemons,
     setSearchedType,
     setShowedPokemons,
-    setPokemonsAbilities
+    setPokemonsAbilities,
+    setFavoritePokemons
 } = dataSlice.actions
 
 export default dataSlice.reducer

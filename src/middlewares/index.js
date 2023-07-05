@@ -1,3 +1,5 @@
+import { setFavorite, setFavoritePokemons } from "../slices/DataSlice"
+
 const logger = (store) => (next) => (action) => {
     // logger recibe el store
     // next es la funcion que llamaremos cuando el middleware termine su trabajo, esta función manda el action al reducer
@@ -5,18 +7,38 @@ const logger = (store) => (next) => (action) => {
     next(action)
 }
 
-// const featuring = (store) => (next) => (actionInfo) => {
-//     const featured = [{name: 'carlos'}, ...actionInfo.action.payload]
+const localStorageMiddleware = (store) => (next) => (action) => {
+    if(action.type === setFavorite.type) {
+        //
+        const currentState = store.getState()
+        const pokemons = currentState.data.pokemons
 
-//     const updatedActionInfo = {
-//             ...actionInfo,
-//             action: {
-//                 ...actionInfo.action,
-//                 payload: featured
-//             }
-//         }
+        const currentPokemon = {...pokemons.find((pokemon) => pokemon.id === action.payload.pokemonID)}
+        currentPokemon.favorite = !currentPokemon.favorite
+        
+        //
+        const favoriteList = JSON.parse(localStorage.getItem('fav_pokemons'))
 
-//         next(updatedActionInfo)
-//     }
+        let updatedFavoriteList = []
+        
+        const foundPokemon = favoriteList.find(pokemon => pokemon.id === currentPokemon.id)
 
-export { logger }
+        if(foundPokemon){
+            updatedFavoriteList = favoriteList.filter(pokemon => pokemon.id !== currentPokemon.id)
+        } else {
+            updatedFavoriteList = [...favoriteList, currentPokemon]
+        }
+
+        localStorage.setItem('fav_pokemons', JSON.stringify(updatedFavoriteList))
+
+        //
+        store.dispatch(setFavoritePokemons())
+    }
+
+    return next(action)
+}
+
+export {
+    logger,
+    localStorageMiddleware
+}

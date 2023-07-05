@@ -14,7 +14,7 @@ function DataContainer({ children, pokemon }) {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setBrightness((prevBrightness) => {return prevBrightness > 90 ? 90 : 105})
+            setBrightness((prevBrightness) => {return prevBrightness > 95 ? 95 : 105})
         }, 2000);
 
         return () => {

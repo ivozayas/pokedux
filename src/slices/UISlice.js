@@ -15,7 +15,7 @@ const initialState = {
         electric: 'linear-gradient(180deg, rgba(170,142,0,1) 0%, rgba(244,235,0,1) 100%)',
         ground: 'linear-gradient(180deg, rgba(110,79,25,1) 0%, rgba(245,199,72,1) 100%)',
         fairy: 'linear-gradient(180deg, rgba(255,100,145,1) 0%, rgba(255,200,219,1) 100%)',
-        normal: ' linear-gradient(180deg, rgba(162,141,103,1) 0%, rgba(208,225,180,1) 100%)',
+        normal: ' linear-gradient(180deg, rgba(142,131,90,1) 0%, rgba(208,225,180,1) 100%)',
         ghost: 'linear-gradient(180deg, rgba(48,11,74,1) 0%, rgba(115,26,159,1) 100%)',
         psychic: 'linear-gradient(180deg, rgba(54,23,160,1) 0%, rgba(224,52,251,1) 100%)',
         ice: 'linear-gradient(180deg, rgba(27,151,221,1) 0%, rgba(202,222,245,1) 100%)',
