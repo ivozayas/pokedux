@@ -5,6 +5,7 @@ const initialState = {
     music: false,
     searching: false,
     emptySearch: false,
+    clearFilter: false,
     typesColors: {
         grass: 'linear-gradient(180deg, rgba(15,125,50,1) 0%, rgba(60,222,58,1) 100%)',
         fire: 'linear-gradient(180deg, rgba(202,42,0,1) 0%, rgba(255,190,0,1) 100%)',
@@ -42,6 +43,9 @@ export const UISlice = createSlice({
         },
         setSearching: (state, action) => {
             state.searching = action.payload
+        },
+        setClearFilter: (state, action) => {
+            state.clearFilter = action.payload
         }
     }
 })
@@ -50,6 +54,7 @@ export const {
     setLoading,
     setMusic,
     setEmptySearch,
-    setSearching
+    setSearching,
+    setClearFilter
 } = UISlice.actions
 export default UISlice.reducer

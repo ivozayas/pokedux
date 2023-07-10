@@ -10,12 +10,14 @@
     margin-top: 120px;
     padding-top: 10px;
     border-top: solid 2px white;
+    min-width: 90vw;
 }
 
 .empty-favorites {
     font-size: 22px;
     color: white;
     font-family: 'Visitor', sans-serif;
+    margin-top: 20px;
 }
 .empty-favorites p {
     text-align: center;

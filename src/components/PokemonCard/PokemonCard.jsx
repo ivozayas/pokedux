@@ -2,9 +2,10 @@ import React from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { useInView } from "react-intersection-observer"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
-import { setFavorite } from '../../slices/DataSlice'
+import { setFavorite, setDetailedPokemon } from '../../slices/DataSlice'
+import { getPokemonDetails } from '../../App/API'
 
 import Meta from 'antd/es/card/Meta'
 import { Card } from 'antd'
@@ -13,9 +14,10 @@ import { PokemonDescription } from './PokemonDescription'
 import { FavButton } from './FavButton'
 import './index.css'
 
-function PokemonCard({ name, img, type, id, isFav }){
+function PokemonCard({ name, img, type, id }){
     const dispatch = useDispatch()
     const typesColors = useSelector(state => state.ui.typesColors)
+    const navigate = useNavigate()
 
     const { ref, inView } = useInView({
         threshold: 0.1,
@@ -27,26 +29,50 @@ function PokemonCard({ name, img, type, id, isFav }){
 
     function handleOnFav(event) {
         event.preventDefault()
+        event.stopPropagation()
+
         dispatch(setFavorite({pokemonID: id}))
+    }
+
+    async function handleDetailLink() {
+        dispatch(setDetailedPokemon({}))
+        
+        const currentPokemonDetails = await getPokemonDetails(`https://pokeapi.co/api/v2/pokemon/${id}`)
+        const detailedPokemonAbilities = await Promise.all(
+            currentPokemonDetails.abilities.map(ability => {
+                return getPokemonDetails(ability.ability.url)
+            })
+        )
+
+        currentPokemonDetails.abilities = detailedPokemonAbilities
+
+        dispatch(setDetailedPokemon(currentPokemonDetails))
+        navigate(`/pokemon-details/${id}`)
     }
 
     return (
         <Link
-            to={`/pokemon-details/${id}`}
+            to={"#"}
             className='link'
             style={{opacity: inView ? 1 : 0}}
             ref={ref}
+            onClick={handleDetailLink}
         >
             <Card
                 className='pokemon-card'
                 title={<CustomCardTitle name={name}/>}
-                cover={img ? <img className='pokemon-img' src={img} alt={name}/> : <div/>}
-                extra={<FavButton isFav={isFav} onClick={(event) => { handleOnFav(event)}}/>}
-                style={{ // corregir color normal?...
-                    background: typesColors[type[0].type.name],
-                }}
+                cover={<img
+                    className='pokemon-img'
+                    src={img}
+                    alt={name}
+                />}
+                extra={<FavButton
+                    id={id}
+                    onClick={(event) => { handleOnFav(event)}}
+                />}
+                style={{background: typesColors[type[0].type.name]}}
             >
-                <Meta className='pokemon-card-description' description={<PokemonDescription types={type}/>}/>
+                <Meta className='pokemon-card-description' description={<PokemonDescription types={type} id={id}/>}/>
             </Card>
         </Link>
     )

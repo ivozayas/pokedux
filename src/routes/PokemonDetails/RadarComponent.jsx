@@ -6,6 +6,8 @@ import {
     PolarRadiusAxis
 } from 'recharts'
 
+import './index.css'
+
 function RadarComponent({ stats }) {
     const data = [{
         subject: "hp",
@@ -31,6 +33,7 @@ function RadarComponent({ stats }) {
 
     return (
         <RadarChart
+            className='radar'
             cy={135}
             cx={180}
             outerRadius={120}

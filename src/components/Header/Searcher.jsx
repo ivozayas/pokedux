@@ -22,6 +22,7 @@ function Searcher(){
         
         let searchedPokemons = pokemons.filter(pokemon => pokemon.name.toLowerCase().includes(searchValue.toLowerCase()))
 
+        navigate(`/search/${searchValue}`)
         dispatch(setSearching(true))
 
         setTimeout(() => {
@@ -31,7 +32,6 @@ function Searcher(){
                 dispatch(setShowedPokemons(searchedPokemons))
             }
 
-            navigate(`/search/${searchValue}`)
             dispatch(setSearchValue(''))
             dispatch(setSearching(false))
         }, 1000)

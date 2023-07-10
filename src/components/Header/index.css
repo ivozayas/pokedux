@@ -32,3 +32,7 @@
   transition: box-shadow .5s ease-in-out;
   box-shadow: none;
 }
+
+:where(.css-dev-only-do-not-override-12jzuas).ant-input-search >.ant-input-group >.ant-input-group-addon:last-child {
+  inset-inline-start: 0px;
+}

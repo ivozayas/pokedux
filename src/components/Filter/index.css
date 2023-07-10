@@ -5,8 +5,10 @@
     font-size: 20px;
     color: white;
     margin-bottom: 30px;
-    /* margin: 0px 40px 30px 40px;
-    padding: 0px 10px; */
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
     width: 89vw;
 }
 
@@ -29,4 +31,15 @@
 :where(.css-dev-only-do-not-override-12jzuas).ant-menu-horizontal {
     border-bottom: 1px solid white;
     transform: color .1s ease-in-out;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+    width: 18px;
+    height: 18px;
+    background-color: rgb(59, 59, 217);
+}
+
+.type-filter {
+    margin-left: 10px;
+    margin-right: 10px;
 }

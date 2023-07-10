@@ -3,14 +3,20 @@ import './index.css'
 
 function PokemonImg({ src, alt }) {
     const [ size, setSize ] = useState(1)
+    const [ brightness, setBrightness ] = useState(100)
 
     useEffect(() => {
         const interval = setInterval(() => {
             setSize((prevSize) => {return prevSize > 1 ? 1 : 1.03})
-        }, 900);
+        }, 1000);
+
+        const bInterval = setInterval(() => {
+            setBrightness((prevBrightness) => {return prevBrightness > 100 ? 98 : 110})
+        }, 1000);
 
         return () => {
             clearInterval(interval)
+            clearInterval(bInterval)
         }
     }, [])
 
@@ -21,7 +27,8 @@ function PokemonImg({ src, alt }) {
             alt={alt}
             style={{
                 transform: `scale(${size})`,
-                transition: 'transform 1s ease-in-out'
+                transition: 'transform 1s ease-in-out, filter 1s ease-in-out',
+                filter: `brightness(${brightness}%)`
             }}
         />
     )

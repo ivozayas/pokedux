@@ -8,7 +8,8 @@ import './index.css'
 function Search() {
     const showedPokemons = useSelector(state => state.data.showedPokemons)
     const emptySearch = useSelector((state) => state.ui.emptySearch)
-
+    const searching = useSelector((state) => state.ui.searching)
+    
     return (
         <section className="search-section">
             <BackButton/>
@@ -16,7 +17,11 @@ function Search() {
             <div className="searched-container">
                 {emptySearch ? ( <EmptySearch/> ) : (
                         <div className="search-section">
-                            <h1 className="result-search">results for: <span>{window.location.pathname.substring(8)}</span></h1>
+                            {!searching && (
+                                <h1 className="result-search">
+                                    results for: <span>{window.location.pathname.substring(8)}</span>
+                                </h1>
+                            )}
                             <PokemonsList pokemons={showedPokemons}/>   
                         </div>
                     )

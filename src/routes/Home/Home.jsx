@@ -6,7 +6,7 @@ import { useSelector } from "react-redux"
 import  './index.css'
 
 function Home() {
-    const pokemons = useSelector(state => state.data.pokemons)
+    const pokemons = useSelector(state => state.data.showedPokemons)
     
     return (
         <React.Fragment>

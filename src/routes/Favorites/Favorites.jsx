@@ -9,7 +9,6 @@ function Favorites() {
     return (
         <section className="favorites-section">
             <BackButton/>
-            
             <div className="favorites-container">
                 {favoritePokemons.length > 0 ? (
                     <PokemonsList pokemons={favoritePokemons}/>

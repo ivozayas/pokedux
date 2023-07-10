@@ -18,7 +18,7 @@ function EmptyFavorites(){
                 setPhrase("The Pokémon world awaits! Let's start exploring!")
                 break;
             case 4:
-                setPhrase("It's time to explore the Pokémon world!")
+                setPhrase("Let's explore the Pokémon world!")
                 break;
             default:
                 return
@@ -28,7 +28,7 @@ function EmptyFavorites(){
 
     return (
         <div className='empty-favorites'>
-            <p>There are no favorite Pokémons...</p>
+            <p style={{ color: 'yellow' }}>There are no favorite Pokémons...</p>
             <p>{phrase}</p>
         </div>
     )
