@@ -7,20 +7,25 @@ import { RadarComponent } from "./RadarComponent"
 import { DataContainer } from "./DataContainer"
 import './index.css'
 
-// quiero que aparezca en fade-in en el lado izquierdo y se despliegue desde 0 width y entonces aparezca la información en fade-in también.
+import { useInView } from "react-intersection-observer"
 
 function PokemonDetails() {
     const pokemon = useSelector(state => state.data.detailedPokemon)
     const [isActive, setIsActive] = useState(false);
-    console.log(pokemon);
+    
     useEffect(() => {
-        window.scrollTo(0, 0);
+        window.scrollTo(0, 0)
         setTimeout(() => {
-            setIsActive(true);
+            setIsActive(true)
         }, 600)
-      }, []);
+      }, [])
 
     const abilities = []
+
+    
+    const { ref, inView } = useInView({
+        threshold: 0.1,
+    })
     
     if(pokemon.abilities){
         pokemon.abilities.forEach((ability, index) => {
@@ -63,11 +68,15 @@ function PokemonDetails() {
                                     <h2 className="details-data">weight: <span>{pokemon.weight}</span></h2>
                                 </div>}
                             </div>
-                            <div className="stats">
+                            <div className="stats" >
                                 <h2 className="details-data">stats:</h2>
-                                <RadarComponent
-                                    stats={pokemon.stats}
-                                />
+                                <div
+                                    ref={ref}
+                                    style={{opacity: inView ? 1 : 0, transition: 'opacity 2.5s ease-in-out'}}
+                                >
+                                    <RadarComponent stats={pokemon.stats}/>
+                                </div>
+                                
                             </div>
                         </div>
                         {abilities.length > 0 ? (<div className="abilities-container">

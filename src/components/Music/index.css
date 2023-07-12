@@ -6,11 +6,12 @@
 }
 
 .music-icon {
-    transition: color .1s ease-in-out;
+    transition: color .2s ease-in-out, transform .2s ease-in-out;
     color: white;
     font-size: 25px;
 }
 
 .music-icon:hover {
+    transform: scale(110%);
     color: yellow
 }

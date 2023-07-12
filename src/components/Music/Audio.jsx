@@ -7,6 +7,7 @@ function Audio() {
     
     useEffect(() => {
         const audioElement = document.getElementById('background-music');
+        
         if (audioElement) {
           audioElement.volume = 0.5
         }

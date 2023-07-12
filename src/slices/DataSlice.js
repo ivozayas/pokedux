@@ -53,7 +53,6 @@ export const getPokemonsWithDetails = createAsyncThunk(
             }
         )
 
-        
         dispatch(setMusic(true))
         dispatch(setTypes(pokemonTypes))
         dispatch(setPokemons(pokemonsDetails))

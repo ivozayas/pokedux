@@ -84,6 +84,7 @@
 .text-data {
     display: flex;
     flex-direction: column;
+    min-width: 350px;
 }
 
 .abilities-container {

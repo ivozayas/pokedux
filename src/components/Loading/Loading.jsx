@@ -6,11 +6,11 @@ function Loading({ text }) {
     
     useEffect(() => {
         const intervalId = setInterval(() => {
-            setDots((prevDots) => (prevDots + 1) % 4);
+            setDots((prevDots) => (prevDots + 1) % 4)
         }, 300)
 
         return () => {
-            clearInterval(intervalId);
+            clearInterval(intervalId)
         }
     }, [])
 
