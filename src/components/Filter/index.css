@@ -12,25 +12,24 @@
     width: 89vw;
 }
 
-:where(.css-dev-only-do-not-override-12jzuas).ant-menu-light .ant-menu-submenu-title:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected) {
+.ant-menu-light .ant-menu-submenu-title:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected) {
     transition: color .1s ease-in-out;
 }
 
-:where(.css-dev-only-do-not-override-12jzuas).ant-menu-light .ant-menu-submenu-title:hover:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected) {
+.ant-menu-light .ant-menu-submenu-title:hover:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected) {
     color: yellow
 }
 
-:where(.css-dev-only-do-not-override-12jzuas).ant-menu-light.ant-menu-horizontal >.ant-menu-submenu:hover::after {
+.ant-menu-light.ant-menu-horizontal >.ant-menu-submenu:hover::after {
     border-color: yellow;
 }
 
-:where(.css-dev-only-do-not-override-12jzuas).ant-menu-light.ant-menu-horizontal >.ant-menu-submenu::after {
+.ant-menu-light.ant-menu-horizontal >.ant-menu-submenu::after {
     border-color: transparent;
 }
 
-:where(.css-dev-only-do-not-override-12jzuas).ant-menu-horizontal {
+.ant-menu-horizontal {
     border-bottom: 1px solid white;
-    transform: color .1s ease-in-out;
 }
 
 .ant-checkbox-checked .ant-checkbox-inner {

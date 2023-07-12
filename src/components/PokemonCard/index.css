@@ -21,18 +21,18 @@
     margin-bottom: 0px;
 }
 
-:where(.css-dev-only-do-not-override-12jzuas).ant-card .ant-card-body  {
+.ant-card .ant-card-body  {
     padding: 0px;
     display: flex;
     justify-content: center;
     margin-bottom: 5px;
 }
 
-:where(.css-dev-only-do-not-override-12jzuas).ant-card .ant-card-head-wrapper {
+.ant-card .ant-card-head-wrapper {
     padding: 0px 5px;
 }
 
-:where(.css-dev-only-do-not-override-12jzuas).ant-card-bordered .ant-card-cover {
+.ant-card-bordered .ant-card-cover {
     display: flex;
     justify-content: center;
 }
@@ -56,7 +56,7 @@
     max-width: 90%;
 }
 
-:where(.css-dev-only-do-not-override-12jzuas).ant-card .ant-card-extra {
+.ant-card .ant-card-extra {
     font-size: 18px;
 }
 

@@ -32,9 +32,8 @@ function Filter() {
         dispatch(setClearFilter(false))
     }
     
-    // isChecked ? color:yellow : white
     return (
-        <Menu className='filter' selectedKeys={[]} mode="horizontal">
+        <Menu style={{borderBottom: '1px solid white'}} className='filter' selectedKeys={[]} mode="horizontal">
             {!loading && ( <CheckBox/> )}
             {!loading && (
                 <SubMenu
